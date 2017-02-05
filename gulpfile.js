@@ -1,27 +1,26 @@
-var gulp = require('gulp'),
-  // utils
-  usemin = require('gulp-usemin'),
-  rename = require('gulp-rename'),
-  rev = require('gulp-rev'),
-  del = require('del'),
-  runSequence = require('run-sequence'),
-  // watcher & server
-  connect = require('gulp-connect'),
-  watch = require('gulp-watch'),
-  // compilers
-  concat = require('gulp-concat'),
-  sass = require('gulp-sass'),
-  replace = require('gulp-replace'),
-  // min
-  cleanCss = require('gulp-clean-css'),
-  htmlmin = require('gulp-htmlmin'),
-  uglify = require('gulp-uglify'),
-  // log
-  log = function(msg) {
-    process.stdout.write(msg + '\n');
-  };
+const gulp = require('gulp');
 
-log('============================ SOLweb GULP ============================');
+// utils
+const usemin = require('gulp-usemin');
+const rename = require('gulp-rename');
+const rev = require('gulp-rev');
+const del = require('del');
+const runSequence = require('run-sequence');
+// watcher & server
+const connect = require('gulp-connect');
+const watch = require('gulp-watch');
+// compilers
+const concat = require('gulp-concat');
+const sass = require('gulp-sass');
+const replace = require('gulp-replace');
+// min
+const cleanCss = require('gulp-clean-css');
+const htmlmin = require('gulp-htmlmin');
+const uglify = require('gulp-uglify');
+// log
+const log = function(msg) {
+  process.stdout.write(msg + '\n');
+};
 
 // *****************************************************************************
 
@@ -57,12 +56,12 @@ var PATHS = {
 gulp.task('help', function(done) {
 
   log(`
-  - gulp
-    DEV Execute gulp dist + watcher and livereload
+    - gulp
+      DEV Execute gulp dist + watcher and livereload
 
-  - gulp dist
-    DIST put a production ready compiled app in /dist
-`);
+    - gulp dist
+      DIST put a production ready compiled app in /dist
+  `);
 
   done();
 });
@@ -99,9 +98,7 @@ gulp.task('sass', function(done) {
 // Concat SCRIPTS into a file and apply config
 gulp.task('scripts', function(done) {
   gulp.src([PATHS.src.scripts])
-    .pipe(concat(PATHS.tmp.scripts, {
-      newLine: ';'
-    }))
+    .pipe(concat(PATHS.tmp.scripts))
     .pipe(gulp.dest(PATHS.tmp.dir))
     .on('end', done);
 });
@@ -123,20 +120,20 @@ gulp.task('dist_clean', function(callback) {
 // Copy included assets
 gulp.task('dist_assets', function(callback) {
   return gulp.src(PATHS.src.assets)
-    .pipe(gulp.dest(PATHS.dist))
+    .pipe(gulp.dest(PATHS.dist));
 });
 
 // Pack and move the <!-- builds --> in index.html
 gulp.task('dist_compile', function() {
   return gulp.src(PATHS.tmp.index)
     .pipe(usemin({
-      app_css: [
+      appCss: [
         cleanCss({
           keepSpecialComments: 0
         }),
         rev()
       ],
-      app_js: [
+      appJs: [
         // commenting this will deobfuscate the code
         uglify({
           mangle: true
@@ -148,7 +145,6 @@ gulp.task('dist_compile', function() {
           conditionals: true,
           collapseWhitespace: true,
           spares: true,
-          // maxLineLength: CONFIG.minify.maxLineLength,
           removeComments: true,
         })
       ],
