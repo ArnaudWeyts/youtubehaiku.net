@@ -6,7 +6,6 @@ Licence: MIT
 -->
 <!doctype html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +22,6 @@ Licence: MIT
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
   </head>
-
   <body>
     <div class="overtube"></div>
     <div class="overlay channels" style="display:none;">
@@ -42,44 +40,35 @@ Licence: MIT
                 <i class="fa" aria-hidden="true"></i>
               </span>
               <span class="label">
-
                 HAIKU
               </span>
-
             </a>
             <a class="button bg_poetry" onclick="haiku.toggleTag('poetry')">
               <span id="tag-poetry">
                 <i class="fa" aria-hidden="true"></i>
               </span>
               <span class="label">
-
                 POETRY
               </span>
-
             </a>
           </div>
-          <div>
-            <a class="button bg_meme" onclick="haiku.toggleTag('meme')">
-              <span id="tag-meme">
-                <i class="fa" aria-hidden="true"></i>
-              </span>
-              <span class="label">
-
-                MEME
-              </span>
-
-            </a>
-            <a class="button bg_other" onclick="haiku.toggleTag('nsfw')">
-              <span id="tag-nsfw">
-                <i class="fa" aria-hidden="true"></i>
-              </span>
-              <span class="label">
-
-                NSFW
-              </span>
-
-            </a>
-          </div>
+        <div>
+          <a class="button bg_meme" onclick="haiku.toggleTag('meme')">
+            <span id="tag-meme">
+              <i class="fa" aria-hidden="true"></i>
+            </span>
+            <span class="label">
+              MEME
+            </span>
+          </a>
+          <a class="button bg_other" onclick="haiku.toggleTag('nsfw')">
+            <span id="tag-nsfw">
+              <i class="fa" aria-hidden="true"></i>
+            </span>
+            <span class="label">
+              NSFW
+            </span>
+          </a>
         </div>
         <hr>
         <p style="text-align:center;">...then choose what channel you want to watch</p>
@@ -127,7 +116,6 @@ Licence: MIT
                 <i class="fa fa-play" aria-hidden="true"></i>
               </span>
               <span class="label">
-
                 Top of the week
               </span>
 
@@ -137,7 +125,6 @@ Licence: MIT
                 <i class="fa fa-play" aria-hidden="true"></i>
               </span>
               <span class="label">
-
                 Top of the month
               </span>
 
@@ -149,37 +136,29 @@ Licence: MIT
                 <i class="fa fa-play" aria-hidden="true"></i>
               </span>
               <span class="label">
-
                 Top of the year
               </span>
-
             </a>
             <a class="button" onclick="haiku.playChannel('top','all')">
               <span id="channel-top-all" class="channel">
                 <i class="fa fa-play" aria-hidden="true"></i>
               </span>
               <span class="label">
-
                 Top of all time
               </span>
-
             </a>
           </div>
           <hr>
           <div>
-
             <a class="button" onclick="haiku.playVideo()">
               <span class="back">
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>
               </span>
               <span class="label">
-
                 Nope, keep playin'
               </span>
-
             </a>
           </div>
-
         </div>
       </div>
     </div>
@@ -189,15 +168,18 @@ Licence: MIT
         <p style="text-align:justify;">Enjoy the videos posted by the users of the subreddit
           <a style="font-weight:bold;" onclick="haiku.openLink('http://www.reddit.com/r/youtubehaiku')">
             <i class="fa fa-reddit-alien"></i>
-            r/youtubehaiku</a>
-          in a nice modern player that will make you waste even more time than usual.</p>
+            r/youtubehaiku
+          </a>
+          in a nice modern player that will make you waste even more time than usual.
+        </p>
         <p style="text-align:justify;">
           You just need to know that
           <span class="tag bg_haiku">HAIKU</span>
           are poetic videos under 14 seconds,
           <span class="tag bg_poetry">POETRY</span>
           are still poetic but longer (under 30 seconds) and then, you know, there are
-          <span class="tag bg_meme">Memes</span>.</p>
+          <span class="tag bg_meme">Memes</span>.
+        </p>
         <p style="font-size:110%;text-align:center;">youtubehaiku.net is made by
           <a href="http://simonecingano.it" style="font-weight:bold;" target="_blank">Simone Cingano</a>
           (aka u/yupswing).<br>
@@ -206,7 +188,8 @@ Licence: MIT
           and you can fork the code on
           <a style="font-weight:bold;" href="https://github.com/yupswing/youtubehaiku.net" target="_blank">
             <i class="fa fa-github"></i>
-            github</a>
+            github
+          </a>
         </p>
         <div class="buttons">
           <a class="button" onclick="haiku.playVideo()">
@@ -219,11 +202,13 @@ Licence: MIT
         <p style="font-size:110%;text-align:center;">
           If you have comments or ideas
           <a href="mailto:me@yupswing.it" target="_blank">contact me</a>.
-        </sup>
-      </p>
+        </p>
+      </div>
       <hr>
-      <p>Control the player with the buttons<span class="no_mobile">
-          or use the keyboard shortcuts</span>:</p>
+      <p>
+        Control the player with the buttons<span class="no_mobile">
+        or use the keyboard shortcuts</span>:
+      </p>
       <ul>
         <li>
           <i class="shortcut fa fa-list-ul"></i>
@@ -233,68 +218,74 @@ Licence: MIT
             or
             <kbd>.</kbd>
           </span>
-        </span>
-        to open the channel selection</li>
-      <li>
-        <i class="shortcut fa fa-reddit-alien"></i>
-        <span class="no_mobile">
-          or
-          <kbd>C</kbd>
-          or
-          <kbd>L</kbd>
-        </span>
-        to open the reddit post</li>
-      <li>
-        <i class="shortcut fa fa-fast-forward"></i>
-        <span class="no_mobile">
-          or
-          <kbd>→</kbd>
-          or
-          <kbd>N</kbd>
-        </span>
-        to skip to the next video</li>
-      <li>
-        <i class="shortcut fa fa-play"></i>
-        <span class="no_mobile">
-          or
-          <kbd>P</kbd>
-          or
-          <kbd>SPACE</kbd>
-        </span>
-        to play/pause</li>
-      <li>
-        <i class="shortcut fa fa-repeat"></i>
-        <span class="no_mobile">
-          or
-          <kbd>R</kbd>
-        </span>
-        to replay the current video</li>
-      <li>
-        <i class="shortcut fa fa-fast-backward"></i>
-        <span class="no_mobile">
-          or
-          <kbd>←</kbd>
-          or
-          <kbd>B</kbd>
-        </span>
-        to go back to the previous video</li>
-      <li>
-        <i class="shortcut fa fa-question"></i>
-        <span class="no_mobile">
-          or
-          <kbd>H</kbd>
-          or
-          <kbd>.</kbd>
-        </span>
-        to show this help box again</li>
-    </ul>
+          to open the channel selection
+        </li>
+        <li>
+          <i class="shortcut fa fa-reddit-alien"></i>
+          <span class="no_mobile">
+            or
+            <kbd>C</kbd>
+            or
+            <kbd>L</kbd>
+          </span>
+          to open the reddit post
+        </li>
+        <li>
+          <i class="shortcut fa fa-fast-forward"></i>
+          <span class="no_mobile">
+            or
+            <kbd>→</kbd>
+            or
+            <kbd>N</kbd>
+          </span>
+          to skip to the next video
+        </li>
+        <li>
+          <i class="shortcut fa fa-play"></i>
+          <span class="no_mobile">
+            or
+            <kbd>P</kbd>
+            or
+            <kbd>SPACE</kbd>
+          </span>
+          to play/pause
+        </li>
+        <li>
+          <i class="shortcut fa fa-repeat"></i>
+          <span class="no_mobile">
+            or
+            <kbd>R</kbd>
+          </span>
+          to replay the current video
+        </li>
+        <li>
+          <i class="shortcut fa fa-fast-backward"></i>
+          <span class="no_mobile">
+            or
+            <kbd>←</kbd>
+            or
+            <kbd>B</kbd>
+          </span>
+          to go back to the previous video
+        </li>
+        <li>
+          <i class="shortcut fa fa-question"></i>
+          <span class="no_mobile">
+            or
+            <kbd>H</kbd>
+            or
+            <kbd>.</kbd>
+          </span>
+          to show this help box again
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
 <div class="player">
   <div id="youtube"></div>
 </div>
 <a class="logo" onclick="haiku.openLink('http://www.reddit.com/r/youtubehaiku')">
-  <img src="">
+  <img src="" alt="youtubehaiku logo">
 </a>
 <div class="loadingbar_block">
   <div class="loadingbar buffering"></div>
@@ -315,7 +306,8 @@ Licence: MIT
   </div>
   <div class="next">
     <a class="title" onclick="haiku.nextVideo()">
-      <div class="info"><img src="" class="thumbnail" id="next_thumbnail" style="">
+      <div class="info">
+        <img class="thumbnail" id="next_thumbnail" src="" alt="next video thumbnail">
         <strong>Coming up:</strong><br>
         <span class="tags" id="next_tags"></span>
       </div>
